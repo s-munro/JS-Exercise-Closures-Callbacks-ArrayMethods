@@ -15,11 +15,10 @@
  * should return 'foofoo'.
  */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+  return callback(stringList[0]);
 }
 
 // ⭐️ Example Challenge END ⭐️
-
 
 ///// M V P ///////
 
@@ -41,7 +40,7 @@ function counterMaker() {
   let count = 0;
   return function counter() {
     count++;
-  }
+  };
 }
 
 const counter1 = counterMaker();
@@ -53,13 +52,12 @@ function counter2() {
   return count++;
 }
 
-
 /* Task 2: inning() 
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning() {
-  let scoredPoints = Math.floor(Math.random() * 3)
+  let scoredPoints = Math.floor(Math.random() * 3);
   return scoredPoints;
 }
 
@@ -77,24 +75,19 @@ finalScore(inning, 9) might return:
 
 */
 
-function finalScore(func, innings) {
+function finalScore(inning, num) {
   let scoreBoard = {
     Home: 0,
-    Away: 0,
+    Away: 0
   };
-  // let scoredPoints = 0
-  for (let i = 0; i < innings; i++) {
-    function func() {
-      let scoredPointsHome = Math.floor(Math.random() * 3);
-      scoreBoard.Home = scoreBoard.Home + scoredPointsHome; //adding to Home after random
-      let scoredPointsAway = Math.floor(Math.random() * 3);
-      scoreBoard.Away = scoreBoard.Away + scoredPointsAway; //adding to Away after random
-      return scoreBoard;
-    };
-    func();
+  for (let i = 0; i < num; i++) {
+    scoreBoard.Home = scoreBoard.Home + inning();
+    scoreBoard.Away = scoreBoard.Away + inning();
   }
   return scoreBoard;
 }
+console.log(finalScore(inning, 9));
+
 
 /* Task 4: 
 
@@ -118,22 +111,10 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(innscore, inning, innings) {
+function scoreboard(printInnScore, inning, numInnings) {
   let homeTeam = 0;
   let awayTeam = 0;
-  for (let i = 0; i < innings; i++) {
-    function innscore() {
-      function inning() {
-        let scoredPointsHome = Math.floor(Math.random() * 3);
-        homeTeam = homeTeam + scoredPointsHome; //adding to Home after random
-        let scoredPointsAway = Math.floor(Math.random() * 3);
-        awayTeam = awayTeam + scoredPointsAway; //adding to Away after random
-        return scoreBoard;
-      };
-      inning();
-      console.log(`${i} inning: ${awayTeam} - ${homeTeam}`);
-      return `${i} inning: ${awayTeam} - ${homeTeam}`;
-    }
-    innscore();
+  for (let i = 0; i < numInnings; i++) {
+    function printInnScore() {}
   }
-};
+}
