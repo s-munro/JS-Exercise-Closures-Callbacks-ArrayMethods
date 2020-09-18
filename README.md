@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+_closure refers using a closed function with references to information on the outside of it, i.e. having a function (smallfunc) nested inside of another function (bigfunc), but smallfunc refers to data found in bigfunc._
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +64,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+_the closure is the given argument for personalDice. In this case 'name.'  We can tell this because function() asks for name, which is not given anywhere in function(), but is given in personalDice()._
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+_the newRoll number is the same.  It's a const, and could be made into a let if we wanted to let it change every time_
 c. What is the lexical scope of `newRoll`? 
+_the lexical scope of newRoll is block level, so it's only existent in function()_
 
 ### Task 3 - Stretch Goals
 
